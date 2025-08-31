@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light mode colors */
+  --background: hsl(48 100% 95%); /* #FFF8E1 cream */
+  --foreground: hsl(0 0% 26%); /* #424242 soft dark grey */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(0 0% 26%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(0 0% 26%);
+  --primary: hsl(340 82% 52%); /* #E91E63 warm pink */
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(280 69% 44%); /* #9C27B0 soft purple */
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(48 100% 90%);
+  --muted-foreground: hsl(0 0% 40%);
+  --accent: hsl(36 100% 50%); /* #FF9800 gentle orange */
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(48 50% 85%);
+  --input: hsl(48 50% 85%);
+  --ring: hsl(340 82% 52%);
+  --success: hsl(122 39% 49%); /* #4CAF50 encouraging green */
+  --radius: 1rem;
+  
+  /* Font families */
+  --font-nunito: 'Nunito', sans-serif;
+  --font-open-sans: 'Open Sans', sans-serif;
+}
+
+.dark {
+  --background: hsl(280 15% 8%); /* Dark purple-grey */
+  --foreground: hsl(48 50% 90%);
+  --card: hsl(280 15% 12%);
+  --card-foreground: hsl(48 50% 90%);
+  --popover: hsl(280 15% 12%);
+  --popover-foreground: hsl(48 50% 90%);
+  --primary: hsl(340 65% 45%); /* Muted warm pink */
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(280 50% 35%); /* Muted soft purple */
+  --secondary-foreground: hsl(0 0% 100%);
+  --muted: hsl(280 15% 16%);
+  --muted-foreground: hsl(48 20% 70%);
+  --accent: hsl(36 80% 45%); /* Muted gentle orange */
+  --accent-foreground: hsl(0 0% 100%);
+  --destructive: hsl(0 70% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(280 15% 20%);
+  --input: hsl(280 15% 20%);
+  --ring: hsl(340 65% 45%);
+  --success: hsl(122 30% 40%);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulseGentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.chat-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scroll::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--border));
+  border-radius: 3px;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-open-sans antialiased transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  .animate-pulse-gentle {
+    animation: pulseGentle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .font-nunito {
+    font-family: var(--font-nunito);
+  }
+  
+  .font-open-sans {
+    font-family: var(--font-open-sans);
+  }
+}
