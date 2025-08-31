@@ -112,7 +112,7 @@ export class MemStorage implements IStorage {
       id,
       createdAt: now,
       updatedAt: now,
-      messages: insertConversation.messages || [],
+      messages: (insertConversation.messages || []) as Message[],
     };
     this.conversations.set(id, conversation);
     return conversation;
