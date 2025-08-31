@@ -102,9 +102,6 @@ Luna is designed to be a safe, supportive space for teenage girls. When contribu
 4. Test all conversation flows
 5. Keep user privacy as top priority
 
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ## 🆘 Support
 
