@@ -22,7 +22,7 @@
     "drizzle-zod": "^0.7.0",
     "@neondatabase/serverless": "^0.10.4",
     "openai": "^5.16.0",
-    "esbuild": "^0.25.0"   // moved here to fix Render error
+    "esbuild": "^0.25.0"
   },
   "devDependencies": {
     "tsx": "^4.19.1",
