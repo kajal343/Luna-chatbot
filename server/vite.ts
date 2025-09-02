@@ -94,7 +94,7 @@ import { nanoid } from "nanoid";
 
 // Fix _dirname/_filename in ESM
 const __filename = fileURLToPath(import.meta.url);
-const _dirname = path.dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 const viteLogger = createLogger();
 
